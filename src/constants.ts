@@ -35,6 +35,7 @@ const BSC_RPC_ENDPOINTS = CUSTOM_BSC_RPC_ENDPOINTS.length
   : MAINNET_BSC_RPC_ENDPOINTS;
 
 const BSC_RPC = process.env.BSC_RPC || BSC_RPC_ENDPOINTS[0];
+const BITGERT_RPC= process.env.BIRTGERT_RPC || "https://mainnet-rpc.brisescan.com/"
 const HECO_RPC = process.env.HECO_RPC || 'https://http-mainnet.hecochain.com';
 const AVAX_RPC = process.env.AVAX_RPC || 'https://rpc.ankr.com/avalanche';
 const POLYGON_RPC = process.env.POLYGON_RPC || 'https://polygon-rpc.com/';
@@ -57,6 +58,7 @@ const KAVA_RPC = process.env.KAVA_RPC || 'https://evm.kava.io';
 const ETH_RPC = process.env.ETH_RPC || 'https://rpc.ankr.com/eth';
 
 const BSC_CHAIN_ID = ChainId.bsc;
+const BITGERT_CHAIN_ID=32520;
 const HECO_CHAIN_ID = ChainId.heco;
 const POLYGON_CHAIN_ID = ChainId.polygon;
 const AVAX_CHAIN_ID = ChainId.avax;
@@ -96,6 +98,7 @@ const BEAMSWAP_LPF = 0.0017;
 const TOMBSWAP_LPF = 0.005;
 const BISWAP_LPF = 0.0005;
 
+
 const MULTICHAIN_RPC: Record<ChainId, string> = {
   [ChainId.bsc]: BSC_RPC,
   [ChainId.heco]: HECO_RPC,
@@ -116,12 +119,15 @@ const MULTICHAIN_RPC: Record<ChainId, string> = {
   [ChainId.optimism]: OPTIMISM_RPC,
   [ChainId.kava]: KAVA_RPC,
   [ChainId.ethereum]: ETH_RPC,
+  [ ChainId.bitgert]:BITGERT_RPC
 };
 
 const BSC_VAULTS_ENDPOINT =
   'https://raw.githubusercontent.com/beefyfinance/beefy-v2/prod/src/config/vault/bsc.json';
 const HECO_VAULTS_ENDPOINT =
   'https://raw.githubusercontent.com/beefyfinance/beefy-v2/prod/src/config/vault/heco.json';
+const BITGERT_VAULTS_ENDPOINT=
+'https://raw.githubusercontent.com/Danijel-Enoch/agam-yield-aggregator/master/src/config/vault/bitgert.json'
 const AVAX_VAULTS_ENDPOINT =
   'https://raw.githubusercontent.com/beefyfinance/beefy-v2/prod/src/config/vault/avax.json';
 const POLYGON_VAULTS_ENDPOINT =
@@ -171,6 +177,7 @@ const MULTICHAIN_ENDPOINTS = {
   fuse: FUSE_VAULTS_ENDPOINT,
   metis: METIS_VAULTS_ENDPOINT,
   moonbeam: MOONBEAM_VAULTS_ENDPOINT,
+  bitgert:BITGERT_VAULTS_ENDPOINT,
   // sys: SYS_VAULTS_ENDPOINT,
   emerald: EMERALD_VAULTS_ENDPOINT,
   optimism: OPTIMISM_VAULTS_ENDPOINT,
@@ -187,6 +194,9 @@ export {
   BSC_RPC_ENDPOINTS,
   BSC_CHAIN_ID,
   BSC_VAULTS_ENDPOINT,
+  BITGERT_RPC,
+  BITGERT_CHAIN_ID,
+  BITGERT_VAULTS_ENDPOINT,
   HECO_RPC,
   HECO_CHAIN_ID,
   HECO_VAULTS_ENDPOINT,

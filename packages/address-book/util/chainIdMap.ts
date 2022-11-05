@@ -18,6 +18,7 @@ const chainIdMap = {
   optimism: 10,
   kava: 2222,
   ethereum: 1,
+  bitgert:32520
 };
 
 export default chainIdMap;

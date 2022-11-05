@@ -18,4 +18,5 @@ export enum ChainId {
   optimism = 10,
   kava = 2222,
   ethereum = 1,
+  bitgert=32520
 }
